@@ -1,0 +1,41 @@
+1. Hello script
+- Begin with #!/bin/csh to indicate the current shell
+- Use chmod to execute the file.csh
+
+2. Parameter
+Eg: check.csh file1 file2
+- $0 is check.csh
+- $1 is file1
+- $2 is file2
+- $* is file1 and file2
+- $#argv is 2
+
+3. IF expression
+if (-e somefile) then
+  grep $1 somefile
+else
+  echo "Does not exist"
+endif
+
+4. Queries
+-e file: file merely exists (maybe protected from user)
+-r file: file exists and is readable by user
+-w file: file is writable by user
+-x file: file is executed by user
+-o file: file is owned by user
+-z file: file has size 0
+-f file: file is an ordinary file
+-d file: file is a directory
+
+5. Logic
+!  negate
+&& logical and
+|| logical or
+Eg: if (-f somefile && -w somefile) then
+      # the file exists, is not a directory and I can write it
+      
+6. Variables
+set name = expression
+unset name
+set name =
+# Null variable
